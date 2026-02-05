@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block bodyblock %}
+
+<div class="bg-white min-h-screen py-12 px-4 md:px-20">
+    <div class="max-w-6xl mx-auto">
+
+        <h2 class="text-3xl font-medium text-gray-800 mb-4">
+            Face Recognition Application
+        </h2>
+
+        <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-12 max-w-5xl">
+            <span class="font-semibold text-gray-500">Gender Classification:</span> 
+            This app is driven by data and machine learning model. As soon as user upload the image, 
+            in background it convert into grayscale, crop face, convert into eigen image and finally 
+            it model to predict. All this functionality dumped in the flask app.
+        </p>
+
+        <div class="flex justify-center mb-10">
+            <img 
+                src="/static/images/002.PNG" 
+                alt="Face Recognition Workflow"
+                class="w-[600px] h-auto"
+            >
+        </div>
+
+        <div class="flex justify-center md:justify-end md:pr-40">
+            <a 
+                href="/app/gender/" 
+                class="border border-blue-400 text-blue-500 px-5 py-2 rounded-md hover:bg-blue-500 hover:text-white transition-all text-sm shadow-sm"
+            >
+                Gender App
+            </a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Face Recognition Web App</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+<body>
+
+<!-- Nav bar -->
+<!-- Royal blue: #214ed3 -->
+    <nav class="bg-[#214ed3] text-white">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center">
+
+            <!-- Brand: logo + text -->
+            <a href="/" class="flex items-center space-x-3 ml-12">
+                <!-- logo image -->
+                <img 
+                    src="/static/images/logo.svg" 
+                    alt="Logo" 
+                    class="w-[64px] h-auto"
+                >
+
+                <!-- title -->
+                <span class="text-xl font-semibold">
+                    Face Recognition
+                </span>
+            </a>
+
+            <!-- Menu items near title -->
+            <div class="flex items-center space-x-6 ml-10">
+                <a href="/" class="hover:text-gray-200 transition">
+                    Home
+                </a>
+                <a href="/app/" class="hover:text-gray-200 transition">
+                    App
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    {% block bodyblock %}
+
+
+    {% endblock %}
+
+</body>
