@@ -47,11 +47,92 @@
             </form>
         </div>
 
-        <!-- Right column (report / prediction output) -->
+        <!-- Right column (report / prediction output)
         <div class="lg:col-span-8">
             <!-- report: prediction image, reporting (grayscale, eigen image and probability score) -->
+        <!-- </div> --> 
+        <!-- Right column (report / prediction output) -->
+        <!-- <div class="lg:col-span-8 flex justify-center items-center">
+
+            {% if fileupload %}
+                <img 
+                    src="{{ url_for('static', filename='predict/prediction_image.jpg') }}" 
+                    alt="Predicted Image"
+                    class="max-w-full h-auto rounded-lg shadow-md"
+                >
+            {% else %}
+                <p class="text-gray-400">No image uploaded yet</p>
+            {% endif %}
+
+        </div> -->
+
+        <!-- Right column (report / prediction output) -->
+        <div class="lg:col-span-8">
+
+            {% if fileupload %}
+
+                <!-- Predicted Image -->
+                <div class="flex justify-center mb-6">
+                    <img 
+                        src="{{ url_for('static', filename='predict/prediction_image.jpg') }}" 
+                        alt="Predicted Image"
+                        class="max-w-full max-h-[420px] object-contain rounded-xl shadow-lg border p-2 bg-white"
+                    >
+                </div>
+
+                <!-- Report Table -->
+                <div class="overflow-x-auto">
+                    <table class="min-w-full border border-gray-300 rounded-lg overflow-hidden">
+
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-4 py-2 border">Detection Face</th>
+                                <th class="px-4 py-2 border">Eigen Image</th>
+                                <th class="px-4 py-2 border">Prediction Gender</th>
+                                <th class="px-4 py-2 border">Score</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for element in report %}
+                            <tr class="text-center">
+
+                                <td class="border p-2">
+                                    <img src="/static/predict/{{ element[0] }}" height="100" class="mx-auto">
+                                </td>
+
+                                <td class="border p-2">
+                                    <img src="/static/predict/{{ element[1] }}" height="100" class="mx-auto">
+                                </td>
+
+                                <td class="border p-2 font-semibold">
+                                    {{ element[2] }}
+                                </td>
+
+                                <td class="border p-2">
+                                    {{ element[3] }}
+                                </td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+
+                    </table>
+                </div>
+
+            {% else %}
+
+                <!-- Default message when no image uploaded -->
+                <div class="flex justify-center items-center h-[400px] text-gray-400">
+                    Upload an image to see prediction report
+                </div>
+
+            {% endif %}
+
         </div>
 
+
+            
     </div>
 
 </div>
